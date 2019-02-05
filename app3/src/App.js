@@ -14,14 +14,12 @@ class App extends Component {
 
   render() {
 
-    const badMovies = this.state.badMovies.map( movie => {
-      <Movie movie={movie} />
-    })
+    const badMovies = this.state.badMovies.map( (movie, index) => <Movie key={index} movie={movie} />)
 
     return (
       <div className="App">
         <h1>Terrible Movies List:</h1>
-        [badMovies]
+        {badMovies}
       </div>
     );
   }
